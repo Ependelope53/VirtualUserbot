@@ -27,20 +27,20 @@ async def _(dc):
     masg = await dc.get_reply_message()  # ghanta😒😒
     if dc.reply_to_msg_id:
         await borg.send_message(chat_id, masg)
-        await dc.edit("⚜️Message Delivered! Sar⚜️")
+        await dc.edit("Pesan sudah terkirim!")
     for i in c[1:]:
         msg += i + " "  # Fixed by @NOOBGeng Second Member
     if msg == "":  # hoho
         return
     try:
         await borg.send_message(chat_id, msg)
-        await dc.edit("`⚜️Message Delivered!⚜️`")
+        await dc.edit("`Pesan sudah terkirim!`")
     except BaseException:  # hmmmmmmmmm🤔🤔
-        await dc.edit(".dm (username) (text)")
+        await dc.edit(".dm (username/id) (text)")
 
 
 CMD_HELP.update(
     {
-        "dm": ".dm (username) (text)\n or\n .dm (username)(reply to msg)\n it'll forward the replyed msg"
+        "dm": ".dm (username/id) (text) atau \n.dm (username/id)(reply to msg)\n Direct Message the user"
     }
 )
